@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
+import AuthGuard from "@/app/authGuard";
 
 const dashboard = () => {
   const [userDetailsedit, setUserDetailsedit] = useState(false);
@@ -590,4 +591,4 @@ const dashboard = () => {
   );
 };
 
-export default dashboard;
+export default AuthGuard(dashboard);

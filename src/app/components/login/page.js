@@ -1,17 +1,18 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { redirect } from "next/navigation";
-// import { app } from "../../../firebaseConfig";
+import { useRouter } from "next/navigation";
+import { app } from "../../../../firebaseConfig";
 // import {
 //   getAuth,
 //   RecaptchaVerifier,
 //   signInWithPhoneNumber,
 // } from "firebase/auth";
-// import { db } from "../../../../firebaseConfig";
-// import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../../../firebaseConfig";
+import { collection, addDoc } from "firebase/firestore";
 
 const Login = () => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState("login"); // State for active tab
   const [mobile, setMobile] = useState("");
   const [otp, setOtp] = useState("");
@@ -185,6 +186,7 @@ const Login = () => {
 
     if (add) {
       alert("Data add to firestore DB !!");
+      router.push("/components/dashboard");
     }
 
     const errors = {};
@@ -245,8 +247,9 @@ const Login = () => {
 
     if (Object.keys(errors).length === 0) {
       console.log("Registration form submitted");
+
       setFormErrors({});
-      redirect("/components/dashboard"); //
+      //
     } else {
       setFormErrors(errors);
     }
