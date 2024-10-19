@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import styles from "./Services.module.css";
 
 const Service = () => {
   useEffect(() => {
@@ -21,7 +22,7 @@ const Service = () => {
       {/* Hero Section */}
       <div className="container">
         <section
-          className="hero-section mt-4 text-center text-white"
+          className={`${styles["hero-section"]} mt-4 text-center text-white`}
           style={{
             backgroundImage: "url(/assets/emis2.jpeg)",
             backgroundSize: "cover",
@@ -41,7 +42,7 @@ const Service = () => {
         </section>
 
         {/* How It Works Section */}
-        <section className="how-it-works py-5">
+        <section className={`${["how-it-works"]} py-5`}>
           <div className="container">
             <div className="row text-center">
               <div className="col-md-4" data-aos="fade-up">
@@ -93,59 +94,132 @@ const Service = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section className="testimonials bg-light py-5">
-          <div className="container">
-            <h2 className="text-center mb-5">What Our Clients Say</h2>
-            <div className="row">
-              <div className="col-md-4 text-center" data-aos="fade-up">
-                <blockquote className="blockquote">
-                  <p className="mb-4">
-                    "Fast and efficient service! I was in and out in no time,
-                    and my car passed without any issues."
-                  </p>
-                  <footer className="blockquote-footer">
-                    John Doe, Honda Civic Owner
-                  </footer>
-                </blockquote>
+        <div className="row g-4">
+          <div className="col-lg-4 col-md-6">
+            <div className={`${styles["service-card"]} h-100`}>
+              <div className={`${styles["service-content"]} text-center`}>
+                Petrol Vehicle Emission Testing
               </div>
-              <div
-                className="col-md-4 text-center"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <blockquote className="blockquote">
-                  <p className="mb-4">
-                    "Very professional team. They explained the whole process
-                    and ensured my car met the emission standards."
-                  </p>
-                  <footer className="blockquote-footer">
-                    Jane Smith, Toyota Prius Owner
-                  </footer>
-                </blockquote>
-              </div>
-              <div
-                className="col-md-4 text-center"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <blockquote className="blockquote">
-                  <p className="mb-4">
-                    "Highly recommended! The team was thorough, and now I feel
-                    confident my car is eco-friendly."
-                  </p>
-                  <footer className="blockquote-footer">
-                    Mark Wilson, Ford Focus Owner
-                  </footer>
-                </blockquote>
+              <div className={`${styles["service-body"]} text-center`}>
+                Standard testing for petrol engines, measuring key pollutants
+                such as carbon monoxide (CO), hydrocarbons (HC), and nitrogen
+                oxides (NOx) to ensure compliance with emission norms.
               </div>
             </div>
           </div>
-        </section>
+
+          <div className="col-lg-4 col-md-6">
+            <div className={`${styles["service-card"]} h-100`}>
+              <div className={`${styles["service-content"]}`}>
+                Diesel Vehicle Emission Testing
+              </div>
+              <div className={`${styles["service-body"]}`}>
+                Emission testing for diesel engines, focusing on pollutants like
+                particulate matter (PM), smoke density, and nitrogen oxides
+                (NOx), essential for regulatory compliance.
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-4 col-md-6">
+            <div className={`${styles["service-card"]} h-100`}>
+              <div className={`${styles["service-content"]}`}>
+                Two-Wheeler Emission Testing
+              </div>
+              <div className={`${styles["service-body"]}`}>
+                Specialized testing for motorcycles and scooters, ensuring that
+                these smaller vehicles adhere to the appropriate emission
+                standards for petrol engines.
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-4 col-md-6">
+            <div className={`${styles["service-card"]} h-100`}>
+              <div className={`${styles["service-content"]}`}>
+                Commercial Vehicle Emission Testing
+              </div>
+              <div className={`${styles["service-body"]}`}>
+                Comprehensive testing for commercial vehicles, including trucks,
+                buses, and vans, to meet specific emission standards for
+                heavy-duty transport.
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-4 col-md-6">
+            <div className={`${styles["service-card"]} h-100`}>
+              <div className={`${styles["service-content"]}`}>
+                Fleet Emission Testing:
+              </div>
+              <div className={`${styles["service-body"]}`}>
+                Tailored emission testing for fleets of vehicles, offering bulk
+                testing services with scheduling flexibility to ensure all
+                vehicles in a fleet meet compliance requirements.
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-4 col-md-6">
+            <div className={`${styles["service-card"]} h-100`}>
+              <div className={`${styles["service-content"]}`}>
+                Hybrid Vehicle Emission Testing
+              </div>
+              <div className={`${styles["service-body"]}`}>
+                Testing services for hybrid vehicles, measuring emissions from
+                both internal combustion engines and assessing overall
+                environmental performance.
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div className={`${styles["service-card"]} h-100`}>
+              <div className={`${styles["service-content"]}`}>
+                Electric Vehicle Compliance Check
+              </div>
+              <div className={`${styles["service-body"]}`}>
+                Though electric vehicles produce no tailpipe emissions, we offer
+                checks to ensure overall vehicle compliance with any applicable
+                environmental regulations.
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div className={`${styles["service-card"]} h-100`}>
+              <div className={`${styles["service-content"]}`}>
+                Re-Testing for Failed Vehicles:
+              </div>
+              <div className={`${styles["service-body"]}`}>
+                <p>
+                  Follow-up testing for vehicles that fail to meet initial
+                  emission standards, including guidance on corrective measures
+                  and compliance assurance.
+                </p>
+                <p>
+                  These services cover a wide range of vehicle types, ensuring
+                  compliance with emission norms across the spectrum of
+                  transportation modes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div className={`${styles["service-card"]} h-100`}>
+              <div className={`${styles["service-content"]}`}>
+                Hybrid Vehicle Emission Testing
+              </div>
+              <div className={`${styles["service-body"]}`}>
+                Testing services for hybrid vehicles, measuring emissions from
+                both internal combustion engines and assessing overall
+                environmental performance.
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Call-to-Action Section */}
         <section
-          className="cta py-5 text-white text-center"
+          className="cta py-5 mt-5 mb-5 text-white text-center"
           style={{
             backgroundImage: "url(/assets/nature.jpg)",
             backgroundSize: "cover",
@@ -162,24 +236,6 @@ const Service = () => {
           </a>
         </section>
       </div>
-      <style jsx>{`
-        .hero-section {
-          background: url("/assets/care.jpeg") no-repeat center center;
-          background-size: cover;
-          height: 70vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          color: white;
-        }
-        .how-it-works img {
-          transition: transform 0.3s ease;
-        }
-        .how-it-works img:hover {
-          transform: scale(1.05);
-        }
-      `}</style>
     </div>
   );
 };
