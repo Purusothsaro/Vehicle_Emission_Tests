@@ -186,6 +186,7 @@ const Login = () => {
 
     if (add) {
       alert("Data add to firestore DB !!");
+      localStorage.setItem("isAuthenticated", true);
       router.push("/components/dashboard");
     }
 

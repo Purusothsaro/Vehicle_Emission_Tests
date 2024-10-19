@@ -1,0 +1,53 @@
+.hero-section {
+  background: url("/assets/care.jpeg") no-repeat center center;
+  background-size: cover;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.how-it-works img {
+  transition: transform 0.3s ease;
+}
+.how-it-works img:hover {
+  transform: scale(1.05);
+}
+.service-card {
+  border: none;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.service-content {
+  font-weight: 700; /* Increased for bolder text */
+  margin-top: 15px;
+  font-size: 1.2rem; /* Slightly larger */
+  color: #343a40;
+  text-align: center; /* Centering the text */
+  padding-bottom: 10px;
+  line-height: 1.4;
+}
+
+.service-body {
+  font-size: 1rem;
+  font-style: italic;
+  color: #495057;
+  text-align: center; /* Centering the text */
+  font-weight: 500; /* Slightly bold for more emphasis */
+  margin-top: 10px;
+}

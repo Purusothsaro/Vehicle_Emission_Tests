@@ -41,9 +41,7 @@ const HeroSection = () => {
         <video src={"/videos/emission.mp4"} autoPlay muted loop />
         {/* <div className="overlay"></div> */}
         <div className="content text-center">
-          <h1 style={{ fontSize: "5rem", color: "white" }}>
-            Vehicle Emissions Testing
-          </h1>
+          <h1 style={{ fontSize: "5rem", color: "white" }}>Emission Testers</h1>
           <p>Your reliable partner in ensuring a cleaner environment</p>
           <Link
             href="/components/scheduleTest"
@@ -70,11 +68,12 @@ const HeroSection = () => {
                 Driving Toward a Cleaner Future
               </h1>
               <p className="lead fade-in">
-                At EmissionCheck, we provide cutting-edge vehicle emissions
-                testing to ensure your vehicle meets environmental standards,
-                protecting the air we breathe and the planet we share.
+                Emission Testers is a cutting-edge service provider specializing
+                in on-demand vehicle emission testing. We offer convenient,
+                reliable, and environmentally conscious emission testing by
+                bringing our services directly to your doorstep.
               </p>
-              <Link href="#learn-more">
+              <Link href="/components/about">
                 <button className="btn btn-primary btn-lg fade-in">
                   Learn More
                 </button>
@@ -100,7 +99,7 @@ const HeroSection = () => {
       {/* Our Services */}
       <div className="container mt-5">
         <div className="services-header text-center">
-          <h2>Our Vehicle Emission Services</h2>
+          <h2>Our Key Features</h2>
           <p>
             We offer a range of services designed to help you reduce your
             vehicle's emissions and ensure compliance with environmental
@@ -112,90 +111,115 @@ const HeroSection = () => {
           <div className="col-md-4">
             <div className="service-card p-4 rounded shadow-lg h-100 fade-in">
               <div className="icon mb-3 fs-1">🔍</div>
-              <h3>Emission Testing</h3>
+              <h3>On-Demand Emission Testing</h3>
               <p className="text-muted">
-                Our comprehensive emission testing evaluates your vehicle's
-                emissions against regulatory standards.
+                Comprehensive emission tests conducted at your location for
+                individual or fleet vehicles, ensuring regulatory compliance and
+                avoiding penalties.
               </p>
-              <button className="btn btn-outline-primary">Learn More</button>
             </div>
           </div>
 
           <div className="col-md-4">
             <div className="service-card p-4 rounded shadow-lg h-100 fade-in">
               <div className="icon mb-3 fs-1">🛠️</div>
-              <h3>Repair Services</h3>
+              <h3>Fleet Emission Management</h3>
               <p className="text-muted">
-                We specialize in repairing and tuning vehicles to meet emission
-                standards.
+                Tailored emission testing services for fleet operators,
+                including scheduled maintenance and regular compliance checks.
+                ize in repairing and tuning vehicles to meet emission standards.
               </p>
-              <button className="btn btn-outline-primary">Learn More</button>
             </div>
           </div>
 
           <div className="col-md-4">
             <div className="service-card p-4 rounded shadow-lg h-100 fade-in">
               <div className="icon mb-3 fs-1">💬</div>
-              <h3>Consultation</h3>
+              <h3>Real-Time Reporting & Certification</h3>
               <p className="text-muted">
-                Our consultation services help vehicle owners understand how to
-                reduce emissions effectively.
+                Instant emission test results and certification to meet
+                governmental requirements, with digital reports for easy
+                record-keeping.
               </p>
-              <button className="btn btn-outline-primary">Learn More</button>
             </div>
           </div>
 
           <div className="col-md-4">
             <div className="service-card p-4 rounded shadow-lg h-100 fade-in">
               <div className="icon mb-3 fs-1">📊</div>
-              <h3>Diagnostic Services</h3>
+              <h3>Emission Retest Services</h3>
               <p className="text-muted">
-                We analyze your vehicle's emission system to identify any
-                inefficiencies.
+                Follow-up testing for vehicles that initially fail to meet
+                standards, offering corrective action plans to achieve
+                compliance.
               </p>
-              <button className="btn btn-outline-primary">Learn More</button>
             </div>
           </div>
 
           <div className="col-md-4">
             <div className="service-card p-4 rounded shadow-lg h-100 fade-in">
               <div className="icon mb-3 fs-1">🌍</div>
-              <h3>Eco-Friendly Upgrades</h3>
+              <h3>Annual/Periodic Testing Plans</h3>
               <p className="text-muted">
-                We offer eco-friendly upgrades to reduce your vehicle's carbon
-                footprint.
+                Subscription-based emission testing plans for ongoing
+                compliance, with periodic visits scheduled to suit your business
+                or personal needs.
               </p>
-              <button className="btn btn-outline-primary">Learn More</button>
             </div>
           </div>
 
           <div className="col-md-4">
             <div className="service-card p-4 rounded shadow-lg h-100 fade-in">
               <div className="icon mb-3 fs-1">📞</div>
-              <h3>Customer Support</h3>
+              <h3>Diesel and Petrol Engine Testing</h3>
               <p className="text-muted">
-                Our support team is here to answer your questions regarding
-                emissions regulations and services.
+                Specialized testing for both diesel and petrol vehicles, using
+                industry-standard equipment for accurate emission readings.
               </p>
-              <button className="btn btn-outline-primary">Learn More</button>
             </div>
           </div>
-        </div>
-
-        {/* Call to Action Section */}
-        <div className="text-center mt-5">
-          <h2>Ready to Improve Your Vehicle's Emissions?</h2>
-          <p>
-            Contact us today to schedule an appointment or learn more about our
-            services!
-          </p>
-          <button className="btn cta-button">Contact Us</button>
+          <div className="col-md-4">
+            <div className="service-card p-4 rounded shadow-lg h-100 fade-in">
+              <div className="icon mb-3 fs-1">📞</div>
+              <h3>Smoke Density Testing (for Diesel Vehicles)</h3>
+              <p className="text-muted">
+                Advanced testing to measure the density of smoke emitted by
+                diesel engines, helping to ensure compliance with specific
+                diesel emission norms.
+              </p>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="service-card p-4 rounded shadow-lg h-100 fade-in">
+              <div className="icon mb-3 fs-1">📞</div>
+              <h3>
+                Hydrocarbon and Carbon Monoxide Testing (for Petrol Vehicles):
+              </h3>
+              <p className="text-muted">
+                Targeted tests to measure levels of hydrocarbons and carbon
+                monoxide in petrol vehicles, ensuring adherence to environmental
+                standards.
+              </p>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className="service-card p-4 rounded shadow-lg h-100 fade-in">
+              <div className="icon mb-3 fs-1">📞</div>
+              <h3>Website Platform for Scheduling & Monitoring</h3>
+              <p className="text-muted">
+                Convenient platform for scheduling emission tests, tracking test
+                history, and receiving reminders for upcoming services.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
       <section className="testimonials bg-light py-5 mt-5">
         <div className="container">
-          <h2 className="text-center mb-5">Why Choose Emission Testing?</h2>
+          <h2 className="text-center mb-5">
+            Why choose Emission Testers? What Our Customers Say?
+          </h2>
           <div className="row">
             <div className="col-md-4 text-center" data-aos="fade-up">
               <blockquote className="blockquote">

@@ -5,10 +5,10 @@ import { useRouter } from "next/navigation";
 const AuthGuard = (WrappedComponent) => {
   return (props) => {
     const router = useRouter();
-    const isAuthenticated = true;
+    const isAuthenticated = localStorage.getItem("isAuthenticated");
 
     useEffect(() => {
-      if (!isAuthenticated) {
+      if (!isAuthenticated == "true") {
         router.push("/components/login");
       }
     }, [isAuthenticated]);

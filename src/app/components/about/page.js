@@ -28,7 +28,7 @@ const AboutUs = () => {
               }}
             >
               <div className="carousel-caption d-none d-md-block">
-                <h1 className="display-3">Welcome to Our Company</h1>
+                <h1 className="display-3">Welcome to Emission Testers</h1>
                 <p>Your trusted partner in vehicle emissions testing.</p>
                 <a href="#aboutUs" className="btn btn-primary">
                   Learn More
@@ -99,24 +99,20 @@ const AboutUs = () => {
         {/* About Us Section */}
         <section id="aboutUs" className="about-us-section container">
           <div className="row">
-            <div className="col-lg-6 about-us-text">
+            <div className="col-lg-6 about-us-text ">
               <div>
                 <h2>About Us</h2>
                 <p>
-                  At [Company Name], we specialize in providing top-notch
-                  vehicle emission testing services. Our mission is to ensure
-                  that every vehicle meets the necessary emission standards,
-                  contributing to a cleaner environment. With a team of
-                  certified professionals, state-of-the-art technology, and a
-                  commitment to excellence, we have established ourselves as a
-                  trusted name in the industry.
+                  Emission Testers is a cutting-edge service provider
+                  specializing in on-demand vehicle emission testing. We offer
+                  convenient, reliable, and environmentally conscious emission
+                  testing by bringing our services directly to your doorstep.
                 </p>
                 <p>
-                  Our services include comprehensive emission testing, detailed
-                  diagnostics, and repairs to help your vehicle run smoothly
-                  while minimizing its environmental impact. We believe in
-                  innovation, customer satisfaction, and sustainability as our
-                  core values.
+                  Our team of certified technicians uses state-of-the-art
+                  equipment to ensure that your vehicle meets all regulatory
+                  emission standards, helping you save time and reduce your
+                  carbon footprint.
                 </p>
               </div>
             </div>
@@ -127,6 +123,37 @@ const AboutUs = () => {
                 width={600}
                 height={400}
               />
+            </div>
+
+            <div className="col-lg-6 about-image mt-5">
+              <Image
+                src="/assets/legal2.jpg"
+                alt="About Us"
+                width={600}
+                height={400}
+              />
+            </div>
+            <div className="col-lg-6 about-us-text">
+              <div>
+                <p>
+                  At Emission Testers, we understand the challenges of
+                  maintaining compliance with ever-evolving environmental
+                  regulations. Our mission is to make this process hassle-free
+                  by offering flexible, on-site emission testing at a time that
+                  suits you. Whether you are managing a large fleet of
+                  commercial vehicles or simply ensuring your personal car meets
+                  emission standards, our expert team ensures quick and accurate
+                  results without disrupting your schedule.
+                </p>
+                <p>
+                  By choosing Emission Testers, you're not only staying
+                  compliant but also contributing to a cleaner, greener
+                  environment. We are dedicated to promoting sustainability by
+                  ensuring that all vehicles on the road meet the necessary
+                  emission norms, helping to reduce air pollution and safeguard
+                  public health. Jo
+                </p>
+              </div>
             </div>
           </div>
         </section>

@@ -23,15 +23,14 @@ const RootLayout = ({ children }) => {
         <nav className="navbar navbar-expand-lg navbar-light sticky-navbar">
           <div className="container">
             <Link href="/" className="navbar-brand">
-              {/* <div className="vid">
+              <div className="vid">
                 <Image
                   src={"/assets/logo.png"}
                   alt="logo"
-                  width={120}
-                  height={60}
+                  width={160}
+                  height={80}
                 />
-              </div> */}
-              Logo
+              </div>
             </Link>
             <button
               className="navbar-toggler collapsed"
@@ -73,18 +72,22 @@ const RootLayout = ({ children }) => {
                     FAQs
                   </Link>
                 </li>
+
                 <li className="nav-item">
                   <Link href="/components/dashboard" className="nav-link">
                     Dashboard
                   </Link>
                 </li>
+
+                <li className="nav-item">
+                  <Link
+                    href="/components/login"
+                    className="btn btn-cta d-none d-lg-block"
+                  >
+                    Login / Register
+                  </Link>
+                </li>
               </ul>
-              <Link
-                href="/components/login"
-                className="btn btn-cta d-none d-lg-block"
-              >
-                Login / Register
-              </Link>
             </div>
           </div>
         </nav>
