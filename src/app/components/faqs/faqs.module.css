@@ -1,0 +1,14 @@
+/**** FAQ ****/
+
+.faq-section-css {
+  background-color: #f8f9fa;
+  padding: 50px 0;
+}
+
+.accordion-button-header {
+  font-weight: bold;
+}
+
+.accordion-body-css {
+  font-size: 0.9rem;
+}

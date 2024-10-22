@@ -35,11 +35,11 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div>
       {/* Hero Banner Section */}
-      <section className="hero-banner mt-4">
+      <section className="hero-banner mt-4 h-100%">
         <video src={"/videos/emission.mp4"} autoPlay muted loop />
-        {/* <div className="overlay"></div> */}
+        <div className="overlay"></div>
         <div className="content text-center">
           <h1 style={{ fontSize: "5rem", color: "white" }}>Emission Testers</h1>
           <p>Your reliable partner in ensuring a cleaner environment</p>
@@ -257,7 +257,7 @@ const HeroSection = () => {
         </div>
       </section>
 
-      {/*Customers Review */}
+      {/* Customers Review
       <section className="container testimonials-section text-center py-5">
         <div className="section-header text-center">
           <p>Customers Review</p>
@@ -367,7 +367,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Certifications
       <section className="py-5" id="certifications">

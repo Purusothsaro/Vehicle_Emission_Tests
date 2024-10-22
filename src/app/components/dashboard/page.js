@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import AuthGuard from "@/app/authGuard";
+import Link from "next/link";
 
 const dashboard = () => {
   const [userDetailsedit, setUserDetailsedit] = useState(false);
@@ -42,31 +43,31 @@ const dashboard = () => {
       noOfVehicles: "2",
     });
     setDashBoard({
-      lastTestDate: "01 Jan 2024",
-      co2Emission: "0.8",
-      fuelConsumed: "5.6",
-      engineTemp: "90",
+      NumberOfVehicle: "3",
+      LastTestDate: "01 Jan 2022",
+      LastValidity: "01 Jun 2022",
+      TestStatus: "Pass",
     });
     setTestResult([
       {
-        testDate: "01 Jan 2022",
-        totalCO2Emission: "0.8",
-        totalFuelConsumed: "5.6/l",
-        engineTemperature: "90°C",
+        SerialNo: "01",
+        VehicleNumber: "TN48A1234",
+        TestDate: "01 Jan 2022",
+        Validity: "01 Jun 2022",
         testResult: "Pass",
       },
       {
-        testDate: "01 Jan 2023",
-        totalCO2Emission: "1.8",
-        totalFuelConsumed: "5.6/l",
-        engineTemperature: "90°C",
+        SerialNo: "02",
+        VehicleNumber: "TN48A5678",
+        TestDate: "01 Jan 2022",
+        Validity: "01 Jun 2022",
         testResult: "Pass",
       },
       {
-        testDate: "01 Jan 2024",
-        totalCO2Emission: "2.6",
-        totalFuelConsumed: "5.6/l",
-        engineTemperature: "90°C",
+        SerialNo: "03",
+        VehicleNumber: "TN48A9102",
+        TestDate: "01 Jan 2022",
+        Validity: "01 Jun 2022",
         testResult: "Fail",
       },
     ]);
@@ -156,9 +157,14 @@ const dashboard = () => {
   return (
     <section className="container my-4">
       <div className="d-flex justify-content-between mb-2">
-        <h2>Welcome Purusothman!</h2>
+        <h2>Welcome Purushothaman!</h2>
         <div>
-          <button className="btn btn-primary">Schedule Test</button>
+          <Link
+            href="/components/scheduleTest"
+            className="btn btn-lg btn-primary cta-btn"
+          >
+            Schedule a Test
+          </Link>
         </div>
       </div>
 
@@ -166,47 +172,47 @@ const dashboard = () => {
         <div className="col-md-3">
           <div className="card p-3  shadow-sm">
             <div className="d-flex justify-content-between">
-              <h5>Last Test Date</h5>
-              <i className="bi bi-calendar fs-5"></i>
+              <h5>Number Of Vehicle</h5>
+              <i className="bi bi-car-front-fill fs-5"></i>
             </div>
             <span className="fs-3 fw-bold text-primary">
               {" "}
-              {dashBoard.lastTestDate}
+              {dashBoard.NumberOfVehicle}
             </span>
           </div>
         </div>
         <div className="col-md-3">
           <div className="card p-3  shadow-sm">
             <div className="d-flex justify-content-between">
-              <h5>Total CO2 Emission</h5>
-              <i className="bi bi-fuel-pump fs-5"></i>
+              <h5> Last Test Date</h5>
+              <i className="bi bi-calendar fs-5"></i>
             </div>
             <span className="fs-3 fw-bold text-primary">
-              {dashBoard.co2Emission}
+              {dashBoard.LastTestDate}
             </span>
           </div>
         </div>
         <div className="col-md-3">
           <div className="card p-3  shadow-sm">
             <div className="d-flex justify-content-between">
-              <h5>Total Fuel Consumed</h5>
-              <i className="bi bi-fuel-pump fs-5"></i>
+              <h5> Last Validity</h5>
+              <i className="bi bi-calendar fs-5"></i>
             </div>
             <span className="fs-3 fw-bold text-primary">
-              {dashBoard.fuelConsumed}
-              <span className="fs-6 fw-bold">/L</span>
+              {dashBoard.LastValidity}
+              {/* <span className="fs-6 fw-bold">/L</span> */}
             </span>
           </div>
         </div>
         <div className="col-md-3">
           <div className="card p-3  shadow-sm">
             <div className="d-flex justify-content-between">
-              <h5>Engine Temperature</h5>
-              <i className="bi bi-thermometer-half fs-5"></i>
+              <h5>Test Status</h5>
+              {/* <i className="bi bi-box-arrow-in-down fs-5"></i> */}
             </div>
-            <span className="fs-3 fw-bold text-primary">
-              {dashBoard.engineTemp}
-              <span className="fs-6 fw-bold">°C</span>
+            <span className="fs-3 fw-bold text-success">
+              {dashBoard.TestStatus}
+              {/* <span className="fs-6 fw-bold">°C</span> */}
             </span>
           </div>
         </div>
@@ -414,7 +420,7 @@ const dashboard = () => {
                   </div>
                 </div>
                 <div className="col-md-6">
-                  <label className="form-label">Engine number etc:</label>
+                  <label className="form-label">Engine number:</label>
                   <div className="fw-bold h6">
                     {vehicleDetails?.result?.engine_no}
                   </div>
@@ -436,7 +442,12 @@ const dashboard = () => {
                     Option to schedule emission test:
                   </label>
                   <div className="fw-bold h6">
-                    {vehicleDetails.optionToScheduleEmissionTest}
+                    <Link
+                      href="/components/scheduleTest"
+                      className="btn btn-lg btn-primary cta-btn"
+                    >
+                      Book an Appointment
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -474,11 +485,11 @@ const dashboard = () => {
                 <thead>
                   <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Serial No</th>
+                    <th scope="col">Vehicle Number</th>
                     <th scope="col">Test Date</th>
-                    <th scope="col">Total CO2 Emission</th>
-                    <th scope="col">Total Fuel Consumed</th>
-                    <th scope="col">Engine Temperature</th>
-                    <th scope="col">Test Result</th>
+                    <th scope="col">Validity</th>
+                    <th scope="col">Test Status</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -487,10 +498,10 @@ const dashboard = () => {
                       return (
                         <tr key={index}>
                           <th scope="row">{index + 1}</th>
-                          <td>{data.testDate}</td>
-                          <td>{data.totalCO2Emission}</td>
-                          <td>{data.totalFuelConsumed}</td>
-                          <td>{data.engineTemperature}</td>
+                          <td>{data.SerialNo}</td>
+                          <td>{data.VehicleNumber}</td>
+                          <td>{data.TestDate}</td>
+                          <td>{data.Validity}</td>
                           <td>
                             <span
                               className={`badge text-bg-${
@@ -547,39 +558,39 @@ const dashboard = () => {
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Invoice Date</th>
-                    <th scope="col">Invoice Time</th>
-                    <th scope="col">Payment Type</th>
+                    <th scope="col">Invoice Number</th>
+                    <th scope="col"> Date & Time</th>
                     <th scope="col">Amount</th>
+                    <th scope="col">Payment Mode</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>01 Jan 2022</td>
-                    <td>10:34 PM</td>
+                    <td>0001</td>
+                    <td>01 Jan 2023 10:34 PM</td>
+                    <td>1500 rs</td>
                     <td>
                       <span className="badge text-bg-primary">Online</span>
                     </td>
-                    <td>1500 rs</td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>01 Jan 2023</td>
-                    <td>2:24 PM</td>
+                    <td>0002</td>
+                    <td>01 Jan 2023 2:24 PM</td>
+                    <td>1500 rs</td>
                     <td>
                       <span className="badge text-bg-secondary">Cash</span>
                     </td>
-                    <td>1500 rs</td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td>01 Jan 2024</td>
-                    <td>11:46 PM</td>
+                    <td>0003</td>
+                    <td>01 Jan 2023 11:46 PM</td>
+                    <td>1500 rs</td>
                     <td>
                       <span className="badge text-bg-success">Bank</span>
                     </td>
-                    <td>1500 rs</td>
                   </tr>
                 </tbody>
               </table>

@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
@@ -36,9 +37,12 @@ const Service = () => {
             Ensure your vehicle meets all emissions standards quickly and
             efficiently.
           </p>
-          <a href="/schedule" className="btn btn-primary btn-lg mt-4">
-            Schedule Your Test
-          </a>
+          <Link
+            href="/components/scheduleTest"
+            className="btn btn-lg btn-primary cta-btn"
+          >
+            Schedule a Test
+          </Link>
         </section>
 
         {/* How It Works Section */}
@@ -95,7 +99,7 @@ const Service = () => {
         </section>
 
         <div className="row g-4">
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6">
             <div className={`${styles["service-card"]} h-100`}>
               <div className={`${styles["service-content"]} text-center`}>
                 Petrol Vehicle Emission Testing
@@ -108,7 +112,7 @@ const Service = () => {
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6">
             <div className={`${styles["service-card"]} h-100`}>
               <div className={`${styles["service-content"]}`}>
                 Diesel Vehicle Emission Testing
@@ -121,7 +125,7 @@ const Service = () => {
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6">
             <div className={`${styles["service-card"]} h-100`}>
               <div className={`${styles["service-content"]}`}>
                 Two-Wheeler Emission Testing
@@ -134,7 +138,7 @@ const Service = () => {
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6">
             <div className={`${styles["service-card"]} h-100`}>
               <div className={`${styles["service-content"]}`}>
                 Commercial Vehicle Emission Testing
@@ -147,7 +151,7 @@ const Service = () => {
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6">
             <div className={`${styles["service-card"]} h-100`}>
               <div className={`${styles["service-content"]}`}>
                 Fleet Emission Testing:
@@ -160,7 +164,7 @@ const Service = () => {
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6">
             <div className={`${styles["service-card"]} h-100`}>
               <div className={`${styles["service-content"]}`}>
                 Hybrid Vehicle Emission Testing
@@ -172,7 +176,7 @@ const Service = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6">
             <div className={`${styles["service-card"]} h-100`}>
               <div className={`${styles["service-content"]}`}>
                 Electric Vehicle Compliance Check
@@ -184,7 +188,7 @@ const Service = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-3 col-md-6">
             <div className={`${styles["service-card"]} h-100`}>
               <div className={`${styles["service-content"]}`}>
                 Re-Testing for Failed Vehicles:
@@ -200,18 +204,6 @@ const Service = () => {
                   compliance with emission norms across the spectrum of
                   transportation modes.
                 </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className={`${styles["service-card"]} h-100`}>
-              <div className={`${styles["service-content"]}`}>
-                Hybrid Vehicle Emission Testing
-              </div>
-              <div className={`${styles["service-body"]}`}>
-                Testing services for hybrid vehicles, measuring emissions from
-                both internal combustion engines and assessing overall
-                environmental performance.
               </div>
             </div>
           </div>
@@ -231,9 +223,12 @@ const Service = () => {
             Schedule your vehicle emission test now to ensure your car meets all
             necessary standards.
           </p>
-          <a href="/schedule" className="btn btn-primary btn-lg">
+          <Link
+            href="/components/scheduleTest"
+            className="btn btn-lg btn-primary cta-btn"
+          >
             Book an Appointment
-          </a>
+          </Link>
         </section>
       </div>
     </div>
