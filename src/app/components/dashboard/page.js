@@ -602,4 +602,4 @@ const dashboard = () => {
   );
 };
 
-export default AuthGuard(dashboard);
+export default dashboard;
