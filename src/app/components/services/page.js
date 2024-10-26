@@ -25,7 +25,7 @@ const Service = () => {
         <section
           className={`${styles["hero-section"]} mt-4 text-center text-white`}
           style={{
-            backgroundImage: "url(/assets/emis2.jpeg)",
+            backgroundImage: "url(/assets/ServiceAssets/serviceHero.jpeg)",
             backgroundSize: "cover",
             height: "70vh",
             backgroundPosition: "center",
@@ -51,11 +51,11 @@ const Service = () => {
             <div className="row text-center">
               <div className="col-md-4" data-aos="fade-up">
                 <Image
-                  src="/assets/care.jpeg"
+                  src="/assets/ServiceAssets/service1.jpeg"
                   alt="Step 1"
                   width={300}
-                  height={150}
-                  className="img-fluid mb-4"
+                  height={400}
+                  className={`img-fluid ${["service-img"]} mb-4`}
                 />
                 <h3>Step 1: Initial Inspection</h3>
                 <p>
@@ -66,11 +66,11 @@ const Service = () => {
               </div>
               <div className="col-md-4" data-aos="fade-up" data-aos-delay="200">
                 <Image
-                  src="/assets/care.jpeg"
+                  src="/assets/ServiceAssets/service2.jpeg"
                   alt="Step 2"
                   width={300}
-                  height={150}
-                  className="img-fluid mb-4"
+                  height={400}
+                  className={`img-fluid ${["service-img"]} mb-4`}
                 />
                 <h3>Step 2: Emission Test</h3>
                 <p>
@@ -81,11 +81,11 @@ const Service = () => {
               </div>
               <div className="col-md-4" data-aos="fade-up" data-aos-delay="400">
                 <Image
-                  src="/assets/care.jpeg"
+                  src="/assets/ServiceAssets/service3.jpeg"
                   alt="Step 3"
                   width={300}
-                  height={150}
-                  className="img-fluid mb-4"
+                  height={400}
+                  className={`img-fluid ${["service-img"]} mb-4`}
                 />
                 <h3>Step 3: Certification</h3>
                 <p>
@@ -213,7 +213,7 @@ const Service = () => {
         <section
           className="cta py-5 mt-5 mb-5 text-white text-center"
           style={{
-            backgroundImage: "url(/assets/nature.jpg)",
+            backgroundImage: "url(/assets/ServiceAssets/serviceB.jpeg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

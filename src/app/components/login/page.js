@@ -274,7 +274,7 @@ const Login = () => {
     <div>
       <div className="container my-5">
         <div className="row justify-content-center">
-          <div className="col-lg-5">
+          <div className="col-lg-6">
             <ul
               className="nav nav-pills mb-3 justify-content-center"
               id="pills-tab"
@@ -621,18 +621,14 @@ const Login = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-6 d-flex align-items-center">
+          <div className="col-lg-6 mt-3  align-items-center">
             <div className="img-container">
               <Image
-                src="/assets/logimage.jpg"
+                src="/assets/LoginImage.jpeg"
                 alt="Vehicles being tested"
-                width={636}
+                width={550}
                 height={490}
-                style={{
-                  objectFit: "cover",
-
-                  borderRadius: "10px", //👈 and here you can select border radius
-                }}
+                style={{ borderRadius: "10px" }}
               />
             </div>
           </div>

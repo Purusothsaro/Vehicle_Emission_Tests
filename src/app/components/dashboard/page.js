@@ -29,8 +29,24 @@ const dashboard = () => {
   });
 
   const [testResult, setTestResult] = useState([]);
+  const [HistoryInvoice, setHistoryInvoice] = useState([]);
   const [testResultFilter, setTestResultFilter] = useState("");
   const [vechileNo, setvechileNo] = useState("");
+
+  const [appointments, setAppointments] = useState([
+    { id: 1, date: "01 Jan 2023", time: "10:34 PM", status: "Completed" },
+    { id: 2, date: "01 Jan 2023", time: "2:24 PM", status: "Delayed" },
+    { id: 3, date: "01 Jan 2023", time: "11:46 PM", status: "Canceled" },
+  ]);
+
+  const [editingAppointment, setEditingAppointment] = useState(null);
+
+  const [vehicles, setVehicles] = useState([
+    { id: 1, number: "TN48A1234" },
+    { id: 2, number: "TN48A5678" },
+  ]);
+  const [newVehicle, setNewVehicle] = useState("");
+  const [editingVehicle, setEditingVehicle] = useState(null);
 
   useEffect(() => {
     setUserDetails({
@@ -50,25 +66,31 @@ const dashboard = () => {
     });
     setTestResult([
       {
-        SerialNo: "01",
         VehicleNumber: "TN48A1234",
         TestDate: "01 Jan 2022",
         Validity: "01 Jun 2022",
         testResult: "Pass",
       },
       {
-        SerialNo: "02",
         VehicleNumber: "TN48A5678",
         TestDate: "01 Jan 2022",
         Validity: "01 Jun 2022",
         testResult: "Pass",
       },
       {
-        SerialNo: "03",
         VehicleNumber: "TN48A9102",
         TestDate: "01 Jan 2022",
         Validity: "01 Jun 2022",
         testResult: "Fail",
+      },
+    ]);
+
+    setHistoryInvoice([
+      {
+        InvoiceNumber: "0001",
+        DateTime: "01 Jan 2023 10:34 PM",
+        Amount: "1500 rs",
+        PaymentMode: "",
       },
     ]);
   }, []);
@@ -154,6 +176,37 @@ const dashboard = () => {
     }
   };
 
+  const handleEditAppointment = (id) => {
+    setEditingAppointment(id);
+  };
+
+  const handleStatusChange = (id, newStatus) => {
+    setAppointments(
+      appointments.map((app) =>
+        app.id === id ? { ...app, status: newStatus } : app
+      )
+    );
+    setEditingAppointment(null);
+  };
+
+  const handleAddVehicle = () => {
+    if (newVehicle.trim()) {
+      setVehicles([...vehicles, { id: Date.now(), number: newVehicle.trim() }]);
+      setNewVehicle("");
+    }
+  };
+
+  const handleEditVehicle = (id, newNumber) => {
+    setVehicles(
+      vehicles.map((v) => (v.id === id ? { ...v, number: newNumber } : v))
+    );
+    setEditingVehicle(null);
+  };
+
+  const handleRemoveVehicle = (id) => {
+    setVehicles(vehicles.filter((v) => v.id !== id));
+  };
+
   return (
     <section className="container my-4">
       <div className="d-flex justify-content-between mb-2">
@@ -165,6 +218,67 @@ const dashboard = () => {
           >
             Schedule a Test
           </Link>
+        </div>
+      </div>
+
+      <div className="row mb-4">
+        <div className="col">
+          <div className="card p-3 shadow-sm">
+            <h5 className="mb-3">Add Your Vehicle</h5>
+            <div className="input-group mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter vehicle number"
+                value={newVehicle}
+                onChange={(e) => setNewVehicle(e.target.value)}
+              />
+              <button
+                className="btn btn-primary"
+                type="button"
+                onClick={handleAddVehicle}
+              >
+                <i className="bi bi-plus-lg"></i> Add Vehicle
+              </button>
+            </div>
+            <ul className="list-group">
+              {vehicles.map((vehicle) => (
+                <li
+                  key={vehicle.id}
+                  className="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  {editingVehicle === vehicle.id ? (
+                    <input
+                      type="text"
+                      className="form-control w-50"
+                      value={vehicle.number}
+                      onChange={(e) =>
+                        handleEditVehicle(vehicle.id, e.target.value)
+                      }
+                      onBlur={() => setEditingVehicle(null)}
+                      autoFocus
+                    />
+                  ) : (
+                    <span>{vehicle.number}</span>
+                  )}
+                  <div>
+                    <button
+                      className="btn btn-sm btn-outline-primary me-2"
+                      onClick={() => setEditingVehicle(vehicle.id)}
+                    >
+                      <i className="bi bi-pencil"></i>
+                    </button>
+                    <button
+                      className="btn btn-sm btn-outline-danger"
+                      onClick={() => handleRemoveVehicle(vehicle.id)}
+                    >
+                      <i className="bi bi-trash"></i>
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -195,7 +309,7 @@ const dashboard = () => {
         <div className="col-md-3">
           <div className="card p-3  shadow-sm">
             <div className="d-flex justify-content-between">
-              <h5> Last Validity</h5>
+              <h5> Next Test Due Date</h5>
               <i className="bi bi-calendar fs-5"></i>
             </div>
             <span className="fs-3 fw-bold text-primary">
@@ -459,6 +573,88 @@ const dashboard = () => {
       <div className="row mb-4">
         <div className="col-md-12">
           <div className="card p-3 shadow-sm">
+            <h4>My Appointments</h4>
+            <div className="mt-2 d-flex justify-content-between">
+              <div className="input-group mb-2 w-25"></div>
+            </div>
+            <div className="table-responsive">
+              <table className="table table-hover table-striped border">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date of Appointment</th>
+                    <th scope="col">Time of Appointment</th>
+                    <th scope="col">Appointment Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {appointments.map((appointment) => (
+                    <tr key={appointment.id}>
+                      <th scope="row">{appointment.id}</th>
+                      <td>{appointment.date}</td>
+                      <td>{appointment.time}</td>
+                      <td>
+                        {editingAppointment === appointment.id ? (
+                          <select
+                            className="form-select"
+                            value={appointment.status}
+                            onChange={(e) =>
+                              handleStatusChange(appointment.id, e.target.value)
+                            }
+                          >
+                            <option value="Upcoming">Upcoming</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Canceled">Canceled</option>
+                            <option value="Delayed">Delayed</option>
+                          </select>
+                        ) : (
+                          <span
+                            className={`badge text-bg-${
+                              appointment.status === "Completed"
+                                ? "primary"
+                                : appointment.status === "Delayed"
+                                ? "secondary"
+                                : appointment.status === "Canceled"
+                                ? "danger"
+                                : "warning"
+                            }`}
+                          >
+                            {appointment.status}
+                          </span>
+                        )}
+                      </td>
+                      <td>
+                        {editingAppointment === appointment.id ? (
+                          <button
+                            className="btn btn-sm btn-success"
+                            onClick={() => setEditingAppointment(null)}
+                          >
+                            Save
+                          </button>
+                        ) : (
+                          <button
+                            className="btn btn-sm btn-primary"
+                            onClick={() =>
+                              handleEditAppointment(appointment.id)
+                            }
+                          >
+                            Edit
+                          </button>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="row mb-4">
+        <div className="col-md-12">
+          <div className="card p-3 shadow-sm">
             <h4>Test Result</h4>
             <div className="mt-2 d-flex justify-content-between">
               <div className="input-group mb-3 w-25">
@@ -474,22 +670,17 @@ const dashboard = () => {
                   aria-describedby="basic-addon1"
                 />
               </div>
-              <div>
-                <button className="btn btn-primary">
-                  <i className="bi bi-file-earmark-arrow-down"></i>
-                </button>
-              </div>
             </div>
             <div className="table-responsive">
               <table className="table table-hover table-striped border">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Serial No</th>
                     <th scope="col">Vehicle Number</th>
                     <th scope="col">Test Date</th>
                     <th scope="col">Validity</th>
                     <th scope="col">Test Status</th>
+                    <th scope="col">Result</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -498,10 +689,10 @@ const dashboard = () => {
                       return (
                         <tr key={index}>
                           <th scope="row">{index + 1}</th>
-                          <td>{data.SerialNo}</td>
                           <td>{data.VehicleNumber}</td>
                           <td>{data.TestDate}</td>
                           <td>{data.Validity}</td>
+
                           <td>
                             <span
                               className={`badge text-bg-${
@@ -512,6 +703,13 @@ const dashboard = () => {
                             >
                               {data.testResult}
                             </span>
+                          </td>
+                          <td>
+                            <div>
+                              <button className="btn btn-primary">
+                                <i className="bi bi-file-earmark-arrow-down"></i>
+                              </button>
+                            </div>
                           </td>
                         </tr>
                       );

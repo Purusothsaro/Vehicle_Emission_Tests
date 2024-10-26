@@ -51,3 +51,7 @@
   font-weight: 500; /* Slightly bold for more emphasis */
   margin-top: 10px;
 }
+.service-img {
+  width: 300px !important;
+  height: 400px !important;
+}

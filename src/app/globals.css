@@ -192,7 +192,10 @@
 .intro-section p {
   margin-bottom: 20px;
 }
-
+.img-introduction {
+  width: 650px !important; /* Force width */
+  height: 400px !important; /* Force height */
+}
 .fade-in {
   opacity: 0;
   transform: translateY(20px);

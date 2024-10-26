@@ -1,6 +1,5 @@
 .bgPrimary {
   background: linear-gradient(to right, #4a90e2, #3f51b5);
-  height: 80vh;
 }
 
 .card {
@@ -35,8 +34,9 @@
 }
 
 .imgFluids {
-  width: 600px;
-  height: 300px;
+  width: 550px;
+  height: 650px;
+  border-radius: 10px;
   animation: bounce 0.9s infinite;
 }
 

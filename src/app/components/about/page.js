@@ -21,7 +21,7 @@ const AboutUs = () => {
             <div
               className="carousel-item active"
               style={{
-                backgroundImage: 'url("/assets/emis1.jpeg")',
+                backgroundImage: 'url("/assets/AboutAssets/aboutHero1.jpeg")',
                 height: "70vh",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
@@ -38,7 +38,7 @@ const AboutUs = () => {
             <div
               className="carousel-item"
               style={{
-                backgroundImage: 'url("/assets/emis2.jpeg")',
+                backgroundImage: 'url("/assets/AboutAssets/aboutHero2.jpeg")',
                 height: "70vh",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
@@ -55,7 +55,7 @@ const AboutUs = () => {
             <div
               className="carousel-item"
               style={{
-                backgroundImage: 'url("/assets/emis4.jpg")',
+                backgroundImage: 'url("/assets/AboutAssets/aboutHero3.jpeg")',
                 height: "70vh",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
@@ -118,7 +118,7 @@ const AboutUs = () => {
             </div>
             <div className="col-lg-6 about-image">
               <Image
-                src="/assets/legal2.jpg"
+                src="/assets/AboutAssets/about1.jpeg"
                 alt="About Us"
                 width={600}
                 height={400}
@@ -127,7 +127,7 @@ const AboutUs = () => {
 
             <div className="col-lg-6 about-image mt-5">
               <Image
-                src="/assets/legal2.jpg"
+                src="/assets/AboutAssets/about2.jpeg"
                 alt="About Us"
                 width={600}
                 height={400}

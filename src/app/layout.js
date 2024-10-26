@@ -75,15 +75,12 @@ const RootLayout = ({ children }) => {
 
                 <li className="nav-item">
                   <Link href="/components/dashboard" className="nav-link">
-                    Dashboard
+                    My Profile
                   </Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link
-                    href="/components/login"
-                    className="btn btn-cta d-none d-lg-block"
-                  >
+                  <Link href="/components/login" className="btn btn-cta ">
                     Login / Register
                   </Link>
                 </li>

@@ -36,26 +36,38 @@ const HeroSection = () => {
 
   return (
     <div>
-      {/* Hero Banner Section */}
-      <section className="hero-banner mt-4 h-100%">
-        <video src={"/videos/emission.mp4"} autoPlay muted loop />
-        <div className="overlay"></div>
-        <div className="content text-center">
-          <h1 style={{ fontSize: "5rem", color: "white" }}>Emission Testers</h1>
-          <p>Your reliable partner in ensuring a cleaner environment</p>
-          <Link
-            href="/components/scheduleTest"
-            className="btn btn-lg btn-primary cta-btn"
-          >
-            Schedule a Test
-          </Link>
-        </div>
-      </section>
-
+      <div className="container">
+        {/* Hero Banner Section */}
+        <section
+          className="hero-banner mt-4 h-100%"
+          /* <video src={"/videos/emission.mp4"} autoPlay muted loop />
+          <div className="overlay"></div> */
+          style={{
+            backgroundImage: "url(/assets/HomeHero.jpeg)",
+            backgroundSize: "cover",
+            height: "70vh",
+            backgroundPosition: "center",
+            padding: "100px 0",
+          }}
+        >
+          <div className="content text-center">
+            <h1 style={{ fontSize: "5rem", color: "black" }}>
+              Emission Testers
+            </h1>
+            <p>Your reliable partner in ensuring a cleaner environment</p>
+            <Link
+              href="/components/scheduleTest"
+              className="btn btn-lg btn-primary cta-btn"
+            >
+              Schedule a Test
+            </Link>
+          </div>
+        </section>
+      </div>
       {/* Introduction Section */}
       <section
         id="introduction"
-        className="intro-section d-flex align-items-center"
+        className="intro-section d-flex align-items-center mt-5"
       >
         <div className="container">
           <div className="section-header text-center">
@@ -82,10 +94,10 @@ const HeroSection = () => {
             <div className="col-md-6 mt-4 fade-in">
               <div className="img-container">
                 <Image
-                  src="/assets/pollution test.webp"
+                  src="/assets/Introduction.jpeg"
                   alt="Car Emissions Testing"
                   layout="responsive"
-                  className="img-fluid"
+                  className="img-introduction"
                   width={400}
                   height={200}
                   style={{ borderRadius: 20 }}
@@ -127,7 +139,6 @@ const HeroSection = () => {
               <p className="text-muted">
                 Tailored emission testing services for fleet operators,
                 including scheduled maintenance and regular compliance checks.
-                ize in repairing and tuning vehicles to meet emission standards.
               </p>
             </div>
           </div>
@@ -443,8 +454,8 @@ const HeroSection = () => {
           <div className="section-header text-center">
             <p>Contact us</p>
           </div>
-          <div className="row align-items-center">
-            <div className="col-lg-6">
+          <div className="row  align-items-center">
+            <div className="col-lg-6 mb-2">
               <div className="contact-form">
                 <h3 className="form-heading">Get in Touch</h3>
                 <form>
@@ -502,12 +513,12 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="col-lg-6 contact-image">
+            <div className="col-lg-6 mt-2 contact-image">
               <Image
-                src={"/assets/emis4.jpg"}
+                src={"/assets/intro.jpeg"}
                 alt="Contact Us Image"
-                width={540}
-                height={490}
+                width={630}
+                height={600}
               />
             </div>
           </div>
