@@ -515,7 +515,7 @@ const HeroSection = () => {
 
             <div className="col-lg-6 mt-2 contact-image">
               <Image
-                src={"/assets/intro.jpeg"}
+                src={"/assets/contactImage.jpeg"}
                 alt="Contact Us Image"
                 width={630}
                 height={600}
